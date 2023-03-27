@@ -389,6 +389,12 @@ footer .contact__rights {
   }
 }
 @media all and (max-width: 800px) {
+  .header .header__container {
+    padding: 60px 50px;
+  }
+  .header .header__container .header__advantages .advantages__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
   nav {
     flex-direction: row;
     padding: 70px 15px 0 15px;

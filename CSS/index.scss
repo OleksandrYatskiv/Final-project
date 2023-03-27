@@ -931,7 +931,7 @@ footer {
           margin-top: 30px;
         }
 
-        .news__hide{
+        .news__hide {
           display: none;
         }
       }
@@ -993,10 +993,8 @@ footer {
   }
 }
 
-// 550 -------------------------------
-
-@media all and (max-width:550px){
-  main .main__publications .publications__news .news__block .news__img img{
+@media all and (max-width:550px) {
+  main .main__publications .publications__news .news__block .news__img img {
     max-width: 200px;
   }
 }
@@ -1005,7 +1003,7 @@ footer {
 @media all and (max-width:360px) {
   header .header__services-link {
     margin: 250px 0 0 30px;
-}
+  }
 
 }
 
