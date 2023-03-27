@@ -13,7 +13,7 @@
 
 .header {
   width: 100%;
-  background: url(/images/homepage-images/header-images/Symbol.png), linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+  background: url(/images/homepage-images/header-images/Symbol.svg), linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   background-position: top, center;
   background-repeat: no-repeat;
 }
@@ -76,6 +76,35 @@ nav {
         text-align: right;
         color: #FFFFFF;
 
+      }
+
+      .info__facebook-logo {
+        display: flex;
+        justify-content: center;
+        margin-left: 15px;
+        margin-bottom: 35px;
+
+        .facebook-logo__usual {
+          position: absolute;
+
+        }
+
+        .facebook-logo__hover {
+          display: none;
+        }
+
+      }
+
+      .info__facebook-logo:hover {
+        .facebook-logo__usual {
+          display: none;
+        }
+
+        .facebook-logo__hover {
+          display: flex;
+          position: absolute;
+
+        }
       }
     }
 
@@ -264,13 +293,21 @@ nav {
 
     .cards-container__cards-headline {
       margin-top: 30px;
-      color: #24A3FF;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 27px;
-      text-align: left;
       max-width: 250px;
 
+      a {
+        color: #24A3FF;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 27px;
+        text-align: left;
+      }
+    }
+
+    .cards-container__cards-headline:hover {
+      a {
+        color: #F0145A;
+      }
     }
 
     .cards-container__cards-caption {
@@ -306,7 +343,7 @@ nav {
 }
 
 main {
-  padding: 0 100px;
+  padding: 0 200px;
   width: 100%;
 
   .main__team-container {
@@ -360,14 +397,27 @@ main {
     }
   }
 
-  .main__ellipse-container {
+  .navigation {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 
-    .ellipse {
-      margin-left: 15px;
+    .bar {
+      width: 15px;
+      height: 15px;
+      margin: 6px;
+      cursor: pointer;
+      background-color: #24A3FF;
+      opacity: .5;
+      border-radius: 10px;
+      transition: all 0.4s ease;
     }
+
+    .bar:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
   }
 
   .logos {
@@ -573,9 +623,33 @@ footer {
       display: flex;
       margin-top: 20px;
 
-      .info__FB-img img {
-        max-width: 38px;
-        max-height: 38px;
+      .contact__info__facebook-logo {
+        display: flex;
+        justify-content: center;
+        margin-right: 15px;
+        margin-bottom: 35px;
+
+        .facebook-logo__usual {
+          position: absolute;
+
+        }
+
+        .facebook-logo__hover {
+          display: none;
+        }
+
+      }
+
+      .contact__info__facebook-logo:hover {
+        .facebook-logo__usual {
+          display: none;
+        }
+
+        .facebook-logo__hover {
+          display: flex;
+          position: absolute;
+
+        }
       }
 
       .info__dot-img {
@@ -640,18 +714,18 @@ footer {
 }
 
 @media all and (max-width:1450px) {
-  .main__publications {
-    margin-left: 0px !important;
-  }
-
   main {
-    padding: 50px !important;
+    padding: 50px;
+
+    .main__publications {
+      margin-left: 0px;
+    }
   }
 }
 
 @media all and (max-width:1315px) {
   main {
-    padding: 0px !important;
+    padding: 0px;
   }
 }
 
@@ -660,31 +734,49 @@ footer {
   nav {
     flex-direction: column-reverse;
 
+    .menu {
+
+      .menu__links {
+        justify-content: flex-start !important;
+        margin-bottom: 30px;
+      }
+    }
   }
 
-  .menu__links {
-    justify-content: flex-start !important;
-    margin-bottom: 30px;
+  .header__consistent {
+
+    .consistent-text {
+
+      .consistent-text__headline {
+        max-width: 350px;
+      }
+
+      .consistent-text__caption {
+        max-width: 350px;
+        height: 250px;
+      }
+    }
   }
 
-  .consistent-text__caption {
-    max-width: 350px !important;
-    height: 250px !important;
-  }
 
-  .consistent-text__headline {
-    max-width: 350px !important;
-  }
+  main {
 
+    .main__publications {
 
+      .publications__news {
 
-  .news__block {
-    width: 200px !important;
-  }
+        .news__block {
 
-  .news__img {
-    img {
-      max-width: 200px !important;
+          width: 200px;
+
+          .news__img {
+
+            img {
+              max-width: 250px;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -698,19 +790,17 @@ footer {
 @media all and (max-width:800px) {
   nav {
     flex-direction: row;
-  }
+    padding: 70px 15px 0 15px;
 
-  .menu {
-    visibility: hidden;
+    .menu {
+      display: none;
+    }
   }
 
   .burger {
     display: flex;
   }
 
-  nav {
-    padding: 70px 15px 0 15px;
-  }
 
   .nav__mobile {
     display: flex;
@@ -753,17 +843,16 @@ footer {
   }
 
   header {
-    overflow: hidden;
 
     .header__consistent {
-      display: flex;
-      flex-direction: column;
+      display: block;
 
       .consistent__headlines {
         display: flex;
         flex-direction: row;
         border: none;
         margin-top: 90px;
+        overflow-x: auto;
 
         a {
           margin-left: 30px;
@@ -839,9 +928,17 @@ footer {
         align-items: center;
 
         .news__block {
-          margin: 30px 0 0 0 !important;
+          margin-top: 30px;
+        }
+
+        .news__hide{
+          display: none;
         }
       }
+    }
+
+    .main__publications .publications__news .news__block:nth-child(2) {
+      margin-left: 0px;
     }
   }
 
@@ -895,6 +992,15 @@ footer {
     }
   }
 }
+
+// 550 -------------------------------
+
+@media all and (max-width:550px){
+  main .main__publications .publications__news .news__block .news__img img{
+    max-width: 200px;
+  }
+}
+
 
 @media all and (max-width:360px) {
   .consistent-text__caption {
