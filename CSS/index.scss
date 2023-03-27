@@ -737,7 +737,7 @@ footer {
     .menu {
 
       .menu__links {
-        justify-content: flex-start !important;
+        justify-content: flex-start;
         margin-bottom: 30px;
       }
     }
@@ -1003,9 +1003,9 @@ footer {
 
 
 @media all and (max-width:360px) {
-  .consistent-text__caption {
-    height: 400px !important;
-  }
+  header .header__services-link {
+    margin: 250px 0 0 30px;
+}
 
 }
 
